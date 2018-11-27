@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #工程部署脚本，会首先编译代码，然后停止jetty，拷贝war包，启动jetty
 #该脚本接受2个参数，第一个为jetty的根目录，第二个为部署使用的environment，若不传参数则使用如下默认值
-jettyDir="/disk1/jetty"
+jettyDir="/home/jayne/jetty"
 environment="develop"
-java_options="-Xmx2500m -Xmn1200m -XX:PermSize=200m "
+java_options="-Xmx200m"
 
 if [ x$1 != x ];then
     jettyDir=$1
@@ -13,7 +13,7 @@ if [ x$2 != x ];then
 fi
 
 if [ x"$environment" = x"develop" ]; then
-    java_options="-Xmx700m "
+    java_options="-Xmx200m "
 fi
 
 rootDir=$(cd "$(dirname "$0")"/; pwd)/../
@@ -33,7 +33,7 @@ cd ${webDir}
 echo "jetty stopping ..."
 sh ../bin/jetty.sh stop
 
-war=${rootDir}/target/backend.war
+war=${rootDir}/target/springmvc.war
 echo "war file: "${war}
 echo "deploy war ..."
 cp ${war} ${webDir}/root.war
