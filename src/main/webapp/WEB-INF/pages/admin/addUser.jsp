@@ -44,6 +44,30 @@
             <button type="submit" class="btn btn-sm btn-success">提交</button>
         </div>
     </form:form>
+
+    <h1>SpringMVC 添加用户2</h1>
+    <hr/>
+    <form:form action="/admin/users/addP2" method="post" commandName="user" role="form">
+        <div class="form-group">
+            <label for="firstName">Nickname:</label>
+            <input type="text" class="form-control" id="nickname2" name="nickname" placeholder="Enter Nickname:"/>
+        </div>
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" class="form-control" id="firstName2" name="firstName" placeholder="Enter FirstName:"/>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" class="form-control" id="lastName2" name="lastName" placeholder="Enter LastName:"/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="text" class="form-control" id="password2" name="password" placeholder="Enter Password:"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-sm btn-success">提交</button>
+        </div>
+    </form:form>
 </div>
 
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->

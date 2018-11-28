@@ -65,4 +65,16 @@ public class IndexController {
         return "redirect:/admin/users";
     }
 
+    // post请求，处理添加用户请求，并重定向到用户管理页面
+    @RequestMapping(value = "/admin/users/addP2", method = RequestMethod.POST)
+    public String addUser2Post(@ModelAttribute("user") User user) {
+        // 注意此处，post请求传递过来的是一个UserEntity对象，里面包含了该用户的信息
+        // 通过@ModelAttribute()注解可以获取传递过来的'user'，并创建这个对象
+
+        // 数据库中添加一个用户，并立即刷新缓存
+        userService.addUser2(user);
+
+        // 重定向到用户管理页面，方法为 redirect:url
+        return "redirect:/admin/users";
+    }
 }

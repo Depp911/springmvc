@@ -12,4 +12,6 @@ public interface UserService {
     List<User> getAllUsers();
 
     boolean addUser(User user);
+
+    boolean addUser2(User user);
 }
